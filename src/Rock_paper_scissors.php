@@ -16,6 +16,12 @@
 
     class RockPaperScissors
     {
+        private $result;
+
+        function __construct()
+        {
+        }
+
         function playRockPaperScissors($player1_input, $player2_input)
         {
             $plays = array($player1_input,$player2_input);
@@ -44,6 +50,32 @@
                 return "Player 2";
             }
         }
+
+        function setResult($result)
+        {
+            $this->result = $result;
+        }
+        function getResult()
+        {
+            return $this->result;
+        }
+
+        function saveResult()
+        {
+            $_SESSION['result'] = $this;
+
+        }
+
+        static function getGlobalResult()
+        {
+            return $_SESSION['result'];
+        }
+
+        static function deletetGlobalResult()
+        {
+            $_SESSION['result'] = new RockPaperScissors;
+        }
+
     }
 
 ?>

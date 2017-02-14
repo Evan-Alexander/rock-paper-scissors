@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="{{ app.request.getbaseurl }}/assets/css/styles.css" rel="stylesheet" type="text/css">
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Play Rock Paper Scissors!</h1>
+            <div class="row">
+                <div class="col-sm-5">
+                    <form action="/" method="post">
+                        <label for="player1">Player1</label><br>
+                        <input type="radio" name="player1" value="rock"> Rock<br>
+                        <input type="radio" name="player1" value="paper"> Paper<br>
+                        <input type="radio" name="player1" value="scissors"> Scissors<br>
+                        <br>
+                        <label for="player2">Player2</label><br>
+                        <input type="radio" name="player2" value="rock"> Rock<br>
+                        <input type="radio" name="player2" value="paper"> Paper<br>
+                        <input type="radio" name="player2" value="scissors"> Scissors<br>
+                        <br>
+                        <button type="submit" name="btn btn-success">Submit</button>
+                    </form>
+                </div>
+                <div class='col-sm-7'>
+                    <h2>Result:</h2>
+                    {% if result is not empty %}
+                        <h1>{{ result.getResult }} Wins!!!!1!</h1>
+                    {% endif %}
+
+                </div>
+            </div>
+    </div>
+
+
+    </body>
+</html>
